@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合租族用電費計算器</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body>
+
+<div class="container">
+  <h2>電費計算器</h2>
+  <div class="instructions">
+    <h3>使用說明：</h3>
+    <p>1. 此計算機適用於合租族群</p>
+    <p>2. 每間房間需有配置個人電表</p>
+    <p>2. 計算機會自動計算出公共用電以及個人用電</p>
+    <p>3. 最後輸出的結果即為每位室友應繳金額</p>
+    <p>4. 輸入時請確保"本期"以及"上期"位置輸入正確</p>
+  </div>
+  <div class="input-field">
+    <label for="person_count">選擇人數：</label>
+    <select id="person_count" onchange="generateInputFields()">
+      <option value="1">人數</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+  </div>
+  <div class="input-field">
+    <label for="total_usage">本期總用電度數：</label>
+    <input type="number" id="total_usage">
+  </div>
+  <div class="input-field">
+    <label for="total_bill">本期電費總金額：</label>
+    <input type="number" id="total_bill">
+  </div>
+
+  <div id="input_fields"></div>
+  <button onclick="calculate()" class="calculate-btn">計 算</button>
+  <div class="cost-per-unit" id="cost_per_unit"></div>
+  <div class="cost-per-unit" id="common_electricity"></div>
+  <div class="cost-per-unit" id="common_electricity_per_person"></div>
+  <div class="result" id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
